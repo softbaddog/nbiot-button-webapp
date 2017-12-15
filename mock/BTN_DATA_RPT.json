@@ -1,0 +1,21 @@
+{
+  "identifier":  "0x0",
+  "msgType":  "BTN_DATA_RPT",
+  "hasMore":  0,
+  "data": [
+    {
+      "serviceId" : "Button",
+      "serviceData" : {
+        "pressMode": 1,
+        "switchState": 1
+      }
+    },
+    {
+      "serviceId" : "Temperature",
+      "serviceData" : {
+        "degreeType": 0,
+        "temperature": 3750
+      }
+    }
+  ]
+}

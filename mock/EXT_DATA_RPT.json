@@ -1,0 +1,26 @@
+{
+  "identifier":  "0x1",
+  "msgType":  "EXT_DATA_RPT",
+  "hasMore":  0,
+  "data": [
+    {
+      "serviceId" : "Connectivity",
+      "serviceData" : {
+        "signalStrength": -86,
+        "linkQuality": -99,
+        "singalECL": 1,
+        "cellID": 9,
+        "signalPCI": 200,
+        "singalSNR": 0
+      }
+    },
+    {
+      "serviceId" : "Battery",
+      "serviceData" : {
+        "batteryLevel": 80,
+        "batteryThreshold": 20,
+        "batteryStatus": 5
+      }
+    }
+  ]
+}

@@ -9,22 +9,17 @@ mongoose.connect('mongodb://localhost/dumall', {
 });
 
 var db = mongoose.connection;
-db.on('connected', function () {
+db.on('error', console.error.bind(console, 'connection error:'));
+db.once('open', () => {
   console.log("MongoDB connected success.")
-});
-db.on('error', function () {
-  console.log("MongoDB connected fail.")
-});
-db.on('disconnected', function () {
-  console.log("MongoDB connected disconnected.")
 });
 
 // 查询商品数据
-router.get('/', function(req, res, next) {
-  let page = parseInt(req.param('page'));
-  let pageSize = parseInt(req.param('pageSize'));
-  let priceLevel = req.param("priceLevel") || 'all';
-  let sort = parseInt(req.param("sort")) || 1;
+router.get('/', (req, res, next) => {
+  let page = parseInt(req.params.page);
+  let pageSize = parseInt(req.params.pageSize);
+  let priceLevel = req.params.priceLevel || 'all';
+  let sort = parseInt(req.params.sort) || 1;
   let skip = (page-1) * pageSize;
   let priceGt = 0, priceLte = 0;
   let params = {};
@@ -42,9 +37,11 @@ router.get('/', function(req, res, next) {
       }
     }
   }
-  let goodsModel = Goods.find(params).skip(skip).limit(pageSize);
-  goodsModel.sort({'salePrice':sort});
-  goodsModel.exec(function (err, doc) {
+  let query = Goods.find(params).skip(skip).limit(pageSize);
+  query.sort({'salePrice':sort});
+  // query.exec((err, docs) => {
+  let promise = query.exec();
+  promise.addBack((err, docs) => {
     if (err) {
       res.json({
         status: '1',
@@ -55,8 +52,8 @@ router.get('/', function(req, res, next) {
         status: '0',
         msg: '',
         result: {
-          count: doc.length,
-          list: doc
+          count: docs.length,
+          list: docs
         }
       })
     }
@@ -64,13 +61,13 @@ router.get('/', function(req, res, next) {
 });
 
 // 加入购物车
-router.post('/addCart', function(req, res, next) {
+router.post('/addCart', (req, res, next) => {
   var userId = '100000077', productId = req.body.productId;
   var User = require('../models/user');
 
   User.findOne({
     userId: userId
-  }, function(err, userDoc) {
+  }, (err, userDoc) => {
     if (err) {
       res.json({
         status: "1",
@@ -79,7 +76,7 @@ router.post('/addCart', function(req, res, next) {
     }else{
       if (userDoc) {
         let goodsItem = '';
-        userDoc.cartList.forEach(function (item) {
+        userDoc.cartList.forEach((item) => {
           if (item.productId == productId) {
             goodsItem = item;
             item.productNum++;
@@ -87,7 +84,7 @@ router.post('/addCart', function(req, res, next) {
           }
         });
         if (goodsItem) {
-          userDoc.save(function (err2, doc2) {
+          userDoc.save((err2, doc2) => {
             if (err) {
               res.json({
                 status: '1',
@@ -102,7 +99,7 @@ router.post('/addCart', function(req, res, next) {
             }
           })
         } else {
-          Goods.findOne({productId: productId}, function (err, doc) {
+          Goods.findOne({productId: productId}, (err, doc) => {
             if (err) {
               res.json({
                 status: '1',
@@ -131,7 +128,6 @@ router.post('/addCart', function(req, res, next) {
             }
           })
         }
-
       }
     }
   })

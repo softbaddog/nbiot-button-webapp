@@ -1,0 +1,287 @@
+[
+    {
+        "deviceId": "6890be76-b05e-4d27-add4-5a6a97e7f1f6",
+        "gatewayId": "6890be76-b05e-4d27-add4-5a6a97e7f1f6",
+        "nodeType": "GATEWAY",
+        "createTime": "20171217T073016Z",
+        "lastModifiedTime": "20171217T090637Z",
+        "deviceInfo": {
+            "nodeId": "863703030633304",
+            "name": "钛比B型",
+            "description": null,
+            "manufacturerId": "Huawei",
+            "manufacturerName": "Huawei",
+            "mac": null,
+            "location": "Shenzhen",
+            "deviceType": "OneButton",
+            "model": "IOTBTN-001",
+            "swVersion": null,
+            "fwVersion": null,
+            "hwVersion": null,
+            "protocolType": "CoAP",
+            "bridgeId": null,
+            "status": "ONLINE",
+            "statusDetail": "NONE",
+            "mute": "FALSE",
+            "supportedSecurity": null,
+            "isSecurity": null,
+            "signalStrength": null,
+            "sigVersion": null,
+            "serialNumber": null,
+            "batteryLevel": null
+        },
+        "services": [
+            {
+                "serviceId": "Button",
+                "serviceType": "Button",
+                "data": {
+                    "pressMode": 0,
+                    "switchState": 1
+                },
+                "eventTime": "20171217T153222Z",
+                "serviceInfo": null
+            },
+            {
+                "serviceId": "Temperature",
+                "serviceType": "Temperature",
+                "data": {
+                    "degreeType": 0,
+                    "degreeValue": 24
+                },
+                "eventTime": "20171217T153222Z",
+                "serviceInfo": null
+            },
+            {
+                "serviceId": "Alarm",
+                "serviceType": "Alarm",
+                "data": {
+                    "lowBatteryAlarm": 0,
+                    "batteryRunOutAlarm": 0,
+                    "highTemperatureAlarm": 1,
+                    "lowTemperatureAlarm": 0,
+                    "innerErrorAlarm": 0
+                },
+                "eventTime": "20171217T170637Z",
+                "serviceInfo": null
+            },
+            {
+                "serviceId": "Connectivity",
+                "serviceType": "Connectivity",
+                "data": {
+                    "signalStrength": 3328,
+                    "linkQuality": 33023,
+                    "signalECL": 1,
+                    "CellID": 1364105729,
+                    "signalPCI": 65280,
+                    "signalSNR": 6144
+                },
+                "eventTime": "20171217T170336Z",
+                "serviceInfo": null
+            },
+            {
+                "serviceId": "Battery",
+                "serviceType": "Battery",
+                "data": {
+                    "batteryLevel": 0
+                },
+                "eventTime": "20171217T170336Z",
+                "serviceInfo": null
+            }
+        ],
+        "connectionInfo": {
+            "protocolType": null
+        },
+        "location": null,
+        "devGroupIds": []
+    },
+    {
+        "deviceId": "794d47a0-5a9a-481e-9e4c-6e5d05ac160c",
+        "gatewayId": "794d47a0-5a9a-481e-9e4c-6e5d05ac160c",
+        "nodeType": "GATEWAY",
+        "createTime": "20171215T014726Z",
+        "lastModifiedTime": "20171215T023305Z",
+        "deviceInfo": {
+            "nodeId": "863703030633395",
+            "name": "IOTBTN-FW",
+            "description": null,
+            "manufacturerId": "Huawei",
+            "manufacturerName": "Huawei",
+            "mac": null,
+            "location": "Shenzhen",
+            "deviceType": "OneButton",
+            "model": "IOTBTN-001",
+            "swVersion": null,
+            "fwVersion": null,
+            "hwVersion": null,
+            "protocolType": "CoAP",
+            "bridgeId": null,
+            "status": "ONLINE",
+            "statusDetail": "NONE",
+            "mute": "FALSE",
+            "supportedSecurity": null,
+            "isSecurity": null,
+            "signalStrength": null,
+            "sigVersion": null,
+            "serialNumber": null,
+            "batteryLevel": null
+        },
+        "services": [
+            {
+                "serviceId": "Alarm",
+                "serviceType": "Alarm",
+                "data": {
+                    "lowBatteryAlarm": 0,
+                    "batteryRunOutAlarm": 0,
+                    "highTemperatureAlarm": 0,
+                    "lowTemperatureAlarm": 0,
+                    "innerErrorAlarm": 0
+                },
+                "eventTime": "20171215T102918Z",
+                "serviceInfo": null
+            },
+            {
+                "serviceId": "Button",
+                "serviceType": "Button",
+                "data": {
+                    "pressMode": 0,
+                    "switchState": 1
+                },
+                "eventTime": "20171215T103305Z",
+                "serviceInfo": null
+            },
+            {
+                "serviceId": "Temperature",
+                "serviceType": "Temperature",
+                "data": {
+                    "degreeType": 0,
+                    "degreeValue": 23
+                },
+                "eventTime": "20171215T103305Z",
+                "serviceInfo": null
+            },
+            {
+                "serviceId": "Connectivity",
+                "serviceType": "Connectivity",
+                "data": {
+                    "signalStrength": 6656,
+                    "linkQuality": 38143,
+                    "signalECL": 0,
+                    "CellID": 1370257671,
+                    "signalPCI": 57600,
+                    "signalSNR": 4609
+                },
+                "eventTime": "20171215T101356Z",
+                "serviceInfo": null
+            },
+            {
+                "serviceId": "Battery",
+                "serviceType": "Battery",
+                "data": {
+                    "batteryLevel": 0
+                },
+                "eventTime": "20171215T101356Z",
+                "serviceInfo": null
+            }
+        ],
+        "connectionInfo": {
+            "protocolType": null
+        },
+        "location": null,
+        "devGroupIds": []
+    },
+    {
+        "deviceId": "2fc880e8-f445-4488-90f6-cc29f4c68857",
+        "gatewayId": "2fc880e8-f445-4488-90f6-cc29f4c68857",
+        "nodeType": "GATEWAY",
+        "createTime": "20171212T015531Z",
+        "lastModifiedTime": "20171212T020536Z",
+        "deviceInfo": {
+            "nodeId": "FFFFFF",
+            "name": "MOCK-BTN-FW",
+            "description": null,
+            "manufacturerId": "Huawei",
+            "manufacturerName": "Huawei",
+            "mac": null,
+            "location": "Shenzhen",
+            "deviceType": "OneButton",
+            "model": "IOTBTN-001",
+            "swVersion": null,
+            "fwVersion": null,
+            "hwVersion": null,
+            "protocolType": "CoAP",
+            "bridgeId": null,
+            "status": "ONLINE",
+            "statusDetail": "NONE",
+            "mute": "FALSE",
+            "supportedSecurity": null,
+            "isSecurity": null,
+            "signalStrength": null,
+            "sigVersion": null,
+            "serialNumber": null,
+            "batteryLevel": null
+        },
+        "services": [
+            {
+                "serviceId": "Button",
+                "serviceType": "Button",
+                "data": {
+                    "pressMode": 1,
+                    "switchState": 1
+                },
+                "eventTime": "20171212T095616Z",
+                "serviceInfo": null
+            },
+            {
+                "serviceId": "Temperature",
+                "serviceType": "Temperature",
+                "data": {
+                    "degreeType": 0,
+                    "degreeValue": 14
+                },
+                "eventTime": "20171212T095616Z",
+                "serviceInfo": null
+            },
+            {
+                "serviceId": "Connectivity",
+                "serviceType": "Connectivity",
+                "data": {
+                    "signalStrength": 65450,
+                    "linkQuality": 65450,
+                    "signalECL": 1,
+                    "CellID": 9,
+                    "signalPCI": 400,
+                    "signalSNR": 200
+                },
+                "eventTime": "20171212T095848Z",
+                "serviceInfo": null
+            },
+            {
+                "serviceId": "Battery",
+                "serviceType": "Battery",
+                "data": {
+                    "batteryLevel": 80
+                },
+                "eventTime": "20171212T095848Z",
+                "serviceInfo": null
+            },
+            {
+                "serviceId": "Alarm",
+                "serviceType": "Alarm",
+                "data": {
+                    "lowBatteryAlarm": 1,
+                    "batteryRunOutAlarm": 1,
+                    "highTemperatureAlarm": 1,
+                    "lowTemperatureAlarm": 1,
+                    "innerErrorAlarm": 1
+                },
+                "eventTime": "20171212T100536Z",
+                "serviceInfo": null
+            }
+        ],
+        "connectionInfo": {
+            "protocolType": null
+        },
+        "location": null,
+        "devGroupIds": []
+    }
+]

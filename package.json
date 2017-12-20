@@ -1,11 +1,11 @@
 {
-  "name": "vue-iotbtn",
+  "name": "nbiot-1btn",
   "version": "1.0.0",
   "description": "A Vue.js project",
   "author": "Fu Wei <softbaddog@gmail.com>",
   "private": true,
   "scripts": {
-    "dev": "webpack-dev-server --inline --progress --config build/webpack.dev.conf.js",
+    "dev": "webpack-dev-server --public --inline --progress --config build/webpack.dev.conf.js",
     "start": "npm run dev",
     "build": "node build/build.js"
   },

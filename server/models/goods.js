@@ -1,6 +1,6 @@
 var mongoose = require('mongoose');
 
-var productSchema = mongoose.Schema({
+var goodSchema = mongoose.Schema({
   "productId": String,
   "productName": String,
   "salePrice": Number,
@@ -9,4 +9,4 @@ var productSchema = mongoose.Schema({
   "checked": String
 });
 
-module.exports = mongoose.model('Good', productSchema);
+module.exports = mongoose.model('Good', goodSchema);

@@ -1,7 +1,9 @@
 var request = require('request');
-var config = require('config');
-var iotApi = require('api');
-var loginInfo = require('auth');
+
+var config = require('./keys');
+var iotApi = require('./api');
+
+let iotUrl = 'https://' + config.host + ':' + config.port;
 
 let deviceInfo = {
   manufacturerId: 'Huawei',
@@ -9,14 +11,14 @@ let deviceInfo = {
   deviceType: 'OneButton',
   model: 'IOTBTN-001',
   protocolType: 'CoAP'
-}
+};
 
 // 注册一个新设备
-exports.registerDevice = (nodeId) => {
+exports.registerDevice = (loginInfo, nodeId) => {
   return new Promise((resovle, reject) => {
       var options = {
-        method: iotApi.registerDevice.method,
-        url: iotUrl + iotApi.registerDevice.url,
+        method: iotApi.createDevice.method,
+        url: iotUrl + iotApi.createDevice.url,
         cert: config.cert,
         key: config.key,
         headers: {
@@ -44,11 +46,11 @@ exports.registerDevice = (nodeId) => {
         reject(res.statusCode, res.statusText);
       }
     });
-  })
-}
+  });
+};
 
 // 删除一个设备
-exports.deleteDevice = (deviceId) => {
+exports.deleteDevice = (loginInfo, deviceId) => {
   return new Promise((resolve, reject) => {
       var options = {
         method: iotApi.deleteDevice.method,
@@ -71,11 +73,11 @@ exports.deleteDevice = (deviceId) => {
         reject(res.statusCode, res.statusText);
       }
     });
-  })
-}
+  });
+};
 
 // 更新一个设备
-exports.updateDevice = (deviceId, name) => {
+exports.updateDevice = (loginInfo, deviceId, name) => {
   return new Promise((resolve, reject) => {
       var options = {
         method: iotApi.updateDevice.method,
@@ -108,15 +110,15 @@ exports.updateDevice = (deviceId, name) => {
         reject(res.statusCode, res.statusText);
       }
     });
-  })
-}
+  });
+};
 
 // 获取设备历史记录
-exports.getDataHistorty = (deviceId, pageNo, pageSize) => {
+exports.getDataHistorty = (loginInfo, deviceId, pageNo, pageSize) => {
   return new Promise((resovle, reject) => {
       var options = {
-        method: iotApi.queryDataHistory.method,
-        url: iotUrl + iotApi.queryDataHistory.url,
+        method: iotApi.queryHistoryData.method,
+        url: iotUrl + iotApi.queryHistoryData.url,
         cert: config.cert,
         key: config.key,
         headers: {
@@ -143,15 +145,15 @@ exports.getDataHistorty = (deviceId, pageNo, pageSize) => {
         reject(res.statusCode, res.statusText);
       }
     });
-  })
-}
+  });
+};
 
 // 获取多个设备数据
-exports.getDevicesInfo = (pageNo, pageSize) => {
+exports.getDevicesInfo = (loginInfo, pageNo, pageSize) => {
   return new Promise((resolve, reject) => {
     var options = {
-      url: iotUrl + apiUrl.queryDevice.url,
-      method: apiUrl.queryDevice.method,
+      url: iotUrl + iotApi.retrieveDevice.url,
+      method: iotApi.retrieveDevice.method,
       cert: config.cert,
       key: config.key,
       headers: {
@@ -165,17 +167,19 @@ exports.getDevicesInfo = (pageNo, pageSize) => {
       strictSSL: false,
       json: true
     };
-
+    // console.log(JSON.stringify(options));
     request(options, (error, res, body) => {
       if (!error && res.statusCode === 200) {
         resolve({
-          result: true,
           totalCount: body.totalCount,
           devicesInfo: body.devices
         });
       } else {
-        reject(res.statusCode, res.statusText);
+        reject({
+          statusCode: res.statusCode,
+          statusText: res.statusText
+        });
       }
     });
-  })
-}
+  });
+};

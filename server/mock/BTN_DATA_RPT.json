@@ -14,7 +14,7 @@
       "serviceId" : "Temperature",
       "serviceData" : {
         "degreeType": 0,
-        "temperature": 3750
+        "temperature": 231
       }
     }
   ]

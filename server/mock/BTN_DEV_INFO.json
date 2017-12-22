@@ -1,0 +1,89 @@
+{
+  "deviceId": "794d47a0-5a9a-481e-9e4c-6e5d05ac160c",
+  "gatewayId": "794d47a0-5a9a-481e-9e4c-6e5d05ac160c",
+  "nodeType": "GATEWAY",
+  "createTime": "20171215T014726Z",
+  "lastModifiedTime": "20171215T023305Z",
+  "deviceInfo": {
+    "nodeId": "863703030633395",
+    "name": "IOTBTN-FW",
+    "description": null,
+    "manufacturerId": "Huawei",
+    "manufacturerName": "Huawei",
+    "mac": null,
+    "location": "Shenzhen",
+    "deviceType": "OneButton",
+    "model": "IOTBTN-001",
+    "swVersion": null,
+    "fwVersion": null,
+    "hwVersion": null,
+    "protocolType": "CoAP",
+    "bridgeId": null,
+    "status": "ONLINE",
+    "statusDetail": "NONE",
+    "mute": "FALSE",
+    "supportedSecurity": null,
+    "isSecurity": null,
+    "signalStrength": null,
+    "sigVersion": null,
+    "serialNumber": null,
+    "batteryLevel": null
+  },
+  "services": [{
+    "serviceId": "Alarm",
+    "serviceType": "Alarm",
+    "data": {
+      "lowBatteryAlarm": 0,
+      "batteryRunOutAlarm": 0,
+      "highTemperatureAlarm": 0,
+      "lowTemperatureAlarm": 0,
+      "innerErrorAlarm": 0
+    },
+    "eventTime": "20171215T102918Z",
+    "serviceInfo": null
+  }, {
+    "serviceId": "Button",
+    "serviceType": "Button",
+    "data": {
+      "pressMode": 0,
+      "switchState": 1
+    },
+    "eventTime": "20171215T103305Z",
+    "serviceInfo": null
+  }, {
+    "serviceId": "Temperature",
+    "serviceType": "Temperature",
+    "data": {
+      "degreeType": 0,
+      "degreeValue": 23
+    },
+    "eventTime": "20171215T103305Z",
+    "serviceInfo": null
+  }, {
+    "serviceId": "Connectivity",
+    "serviceType": "Connectivity",
+    "data": {
+      "signalStrength": 6656,
+      "linkQuality": 38143,
+      "signalECL": 0,
+      "CellID": 1370257671,
+      "signalPCI": 57600,
+      "signalSNR": 4609
+    },
+    "eventTime": "20171215T101356Z",
+    "serviceInfo": null
+  }, {
+    "serviceId": "Battery",
+    "serviceType": "Battery",
+    "data": {
+      "batteryLevel": 0
+    },
+    "eventTime": "20171215T101356Z",
+    "serviceInfo": null
+  }],
+  "connectionInfo": {
+    "protocolType": null
+  },
+  "location": null,
+  "devGroupIds": []
+}

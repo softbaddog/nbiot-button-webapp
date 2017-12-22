@@ -1,5 +1,5 @@
 module.exports = {
-  // token
+  // token fetch and refresh
   fetchToken: {
     method: 'POST',
     url: '/iocm/app/sec/v1.1.0/login'

@@ -1,6 +1,6 @@
 var request = require('request');
 
-var config = require('./keys');
+var config = require('./conf');
 var iotApi = require('./api');
 
 let iotUrl = 'https://' + config.host + ':' + config.port;

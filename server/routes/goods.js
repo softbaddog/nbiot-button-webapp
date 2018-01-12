@@ -16,10 +16,10 @@ db.once('open', () => {
 
 // 查询商品数据
 router.get('/', (req, res, next) => {
-  let page = parseInt(req.params.page);
-  let pageSize = parseInt(req.params.pageSize);
-  let priceLevel = req.params.priceLevel || 'all';
-  let sort = parseInt(req.params.sort) || 1;
+  let page = parseInt(req.query.page);
+  let pageSize = parseInt(req.query.pageSize);
+  let priceLevel = req.query.priceLevel || 'all';
+  let sort = parseInt(req.query.sort) || 1;
   let skip = (page - 1) * pageSize;
   let priceGt = 0,
     priceLte = 0;
@@ -50,7 +50,6 @@ router.get('/', (req, res, next) => {
       }
     };
   }
-  console.log(page, pageSize);
   let query = Goods.find(params).skip(skip).limit(pageSize);
   query.sort({
     'salePrice': sort

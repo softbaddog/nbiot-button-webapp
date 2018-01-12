@@ -3,7 +3,7 @@ var fs = require('fs');
 var path = require('path')
 
 var loginInfo = require(path.resolve(__dirname, 'config/login.json'));
-var config = require('./keys');
+var config = require('./conf');
 var iotApi = require('./api');
 
 let iotUrl = 'https://' + config.host + ':' + config.port;

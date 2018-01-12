@@ -6,7 +6,7 @@ module.exports = {
   },
   refreshToken: {
     method: 'POST',
-    url: '/iocm/app/sec/v1.1.0/refreshToken'
+    url: '/iocm/app/sec/v1.1.0/r efreshToken'
   },
   // devices management
   createDevice: {

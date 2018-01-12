@@ -52,7 +52,7 @@ const devWebpackConfig = merge(baseWebpackConfig, {
       inject: true
     }),
   ]
-})
+});
 
 module.exports = new Promise((resolve, reject) => {
   portfinder.basePort = process.env.PORT || config.dev.port

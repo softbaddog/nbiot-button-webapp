@@ -10,7 +10,8 @@ var dm = require('./../iotplatform/dm');
 router.get('/', (req, res, next) => {
   let pageNo = parseInt(req.query.pageNo);
   let pageSize = parseInt(req.query.pageSize);
-  console.log(pageNo, pageSize);
+
+  // 执行任何查询都需要检测是否登录，并返回最新access_token
   auth.checkLogin().then((loginInfo) => {
     return dm.getDevicesInfo(loginInfo, pageNo, pageSize);
   }).then((data) => {

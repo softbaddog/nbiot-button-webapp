@@ -34,7 +34,7 @@
                   </div>
                   <div class="main">
                     <div class="name">{{item.productName}}</div>
-                    <div class="price">{{item.salePrice}}</div>
+                    <div class="price">{{item.salePrice | currency('$')}}</div>
                     <div class="btn-area">
                       <a href="javascript:;" class="btn btn--m" @click="addCart(item.productId)">加入购物车</a>
                     </div>
@@ -54,7 +54,16 @@
         请先登录，否则无法加入到购物车中！
       </p>
       <div slot="btnGroup">
-        <a href="" class="btn btn--m">关闭</a>
+        <a href="javascript:;" class="btn btn--m" @click="mdShow = false">关闭</a>
+      </div>
+    </goods-modal>
+    <goods-modal v-bind:mdShow="mdShowCart">
+      <p slot="message">
+        加入购物车成功！
+      </p>
+      <div slot="btnGroup">
+        <a href="javascript:;" class="btn btn--m" @click="mdShowCart = false">继续购物</a>
+        <router-link class="btn btn--m" href="javascript:;" to="/cart">查看购物车</router-link>
       </div>
     </goods-modal>
     <goods-footer></goods-footer>
@@ -103,7 +112,8 @@
         pageSize: 8,
         busy: true,
         loading: false,
-        mdShow: false
+        mdShow: false,
+        mdShowCart: false
       }
     },
     mounted() {
@@ -176,7 +186,7 @@
           let data = res.data;
           if (data.status == 0)
           {
-            alert("加入成功");
+            this.mdShowCart = true;
           }else {
             this.mdShow = true;
           }

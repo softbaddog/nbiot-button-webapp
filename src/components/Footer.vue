@@ -31,6 +31,6 @@
 
 <script>
   export default {
-    name: 'nav-footer'
+    name: 'goods-footer'
   }
 </script>

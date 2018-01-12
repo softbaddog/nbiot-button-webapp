@@ -5,12 +5,15 @@ import App from './App'
 import router from './router'
 import VueLazyload from 'vue-lazyload'
 import infiniteScroll from 'vue-infinite-scroll'
+import {currency} from '@/helper/currency'
 
 Vue.use(VueLazyload, {
   loading: '/static/loading-svg/loading-bubbles.svg'}
 );
 Vue.use(infiniteScroll);
 Vue.config.productionTip = false;
+
+Vue.filter('currency', currency);
 
 /* eslint-disable no-new */
 new Vue({
